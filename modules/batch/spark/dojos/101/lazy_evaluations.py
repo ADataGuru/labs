@@ -24,3 +24,4 @@ if __name__ == '__main__':
     sum_pandas = df_pandas["users_count"].sum()
     sum_spark_not_evaluated = df_spark.select("users_count").groupBy().sum()
     sum_spark = sum_spark_not_evaluated.collect()
+    print(sum_spark)
