@@ -39,17 +39,17 @@ Analiser un fichier de log:
 > Vous pouvez faire cela dans un shell Unix de la manière suivante:
 
 ```shell
-cat /var/log/nginx/access.log | # 1️⃣
- awk '{print $7}' |             # 2️⃣
- sort |                         # 3️⃣
- uniq -c |                      # 4️⃣
- sort -r -n |                   # 5️⃣
+cat access.log          |       # 1️⃣
+ awk '{print $7}'       |       # 2️⃣
+ sort                   |       # 3️⃣
+ uniq -c                |       # 4️⃣
+ sort -r -n             |       # 5️⃣
  head -n 5                      # 6️⃣
 ```
 
 + 1️⃣ Lire le fichier log
 + 2️⃣ Divise chaque ligne en champs par des espaces, et ne garde que le septième de ces champs
-de chaque ligne, qui se trouve être l'URL demandée. Dans notre exemple, cette URL est /css/typography.css.
+de chaque ligne, qui est l'URL demandée. Dans notre exemple, cette URL est /css/typography.css.
 + 3️⃣ Trier par ordre alphabétique la liste des URLs demandées.
 + 4️⃣ La commande uniq filtre les lignes répétées dans son entrée en vérifiant si deux lignes adjacentes sont identiques. 
      L'option -c lui demande d'afficher un compteur : pour chaque chaque URL distincte, 
