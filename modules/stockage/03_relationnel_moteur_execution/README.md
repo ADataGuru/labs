@@ -18,7 +18,7 @@ Introduction:
 ------------
 
 ```
-  - Le SGBD convertit une instruction SQL en un plan de requête
+  - Le SGBD convertit une instruction SQL en un plan de requête.
   - Les opérateurs sont disposés dans une arborescence. 
   - Les flux de données proviennent de les feuilles vers la racine. 
   - La sortie du nœud racine dans l'arborescence est le résultat de la requête.
@@ -28,18 +28,16 @@ Introduction:
 
 ```
 SQL est un langage déclaratif. Cela signifie que l'utilisateur indique au SGBD la réponse qu'il souhaite, et non comment l'obtenir.
-Le SGBD doit traduire une instruction SQL en un plan de requête exécutable. Mais il y a différentes façons d'exécuter une requête (par exemple, les algorithmes de jointure) et 
+Le SGBD doit traduire une instruction SQL en un plan de requête exécutable. 
 
-
-il y aura des différences de performances pour ces régimes. 
-
-Ainsi, le SGBD a besoin d'un moyen de choisir le "meilleur" plan pour une requête donnée.
+Le SGBD a besoin d'un moyen de choisir le "meilleur" plan pour une requête donnée.
 
 C'est le travail du Optimiseur de SGBD.
 
 Il existe deux types de stratégies d'optimisation :
  • Heuristique/Règles : réécrivez la requête pour supprimer les inefficacités. Ne nécessite pas de modèle de coût.
- • Recherche basée sur les coûts : utilisez un modèle de coût pour évaluer plusieurs plans équivalents et choisissez celui qui moindre coût.
+ • Recherche basée sur les coûts : utilisez un modèle de coût pour évaluer plusieurs plans équivalents et choisissez 
+   celui à moindre coût.
 ```
 
 
@@ -90,7 +88,7 @@ INSERT INTO produits('identifiant_produit', 'nom','gamme', 'pegi','prix') VALUES
 Plan d'execution  pour des cas simple :
 ------------
 
-Le EXPLAIN nous montre ce que fait la base de donnée en background pour trouver le resultat efficacement; 
+L'EXPLAIN nous montre ce que fait la base de données en background pour trouver le résultat efficacement ; 
 
 ```sql
 EXPLAIN QUERY PLAN SELECT * FROM produits where prix > 40;
@@ -106,10 +104,10 @@ EXPLAIN QUERY PLAN SELECT * FROM produits where gamme = 'action' ORDER BY prix;
 ```
 
 
-Plan d'execution requete  pour un cas complexe :
+Plan d'exécution requête pour un cas complexe :
 ------------
 
-Exemple de reecriture de requete 
+Exemple de réécriture de requête
 
 Predicate pushdown : l'optimiseur filtre la donnée avant de faire la jointure. 
 

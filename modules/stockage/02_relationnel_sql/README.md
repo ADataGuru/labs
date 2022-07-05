@@ -102,7 +102,7 @@ Appelez des requêtes à l'intérieur d'autres requêtes pour exécuter une logi
 Window:
 ------------
 
-Effectue un calcul sur un ensemble de tuples. Comme une agrégation mais il renvoie toujours la ligne original
+Effectue un calcul sur un ensemble de tuples. Comme une agrégation, mais il renvoie toujours la ligne originale.
 tuples.
 
 ```sql

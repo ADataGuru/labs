@@ -10,11 +10,15 @@ Introduction:
 ------------
 
 ```
-Les données sont sotckées sous forme de pages. Des fichiers avec un header pour les métadonnées et ont une taille fixe.
+Les données sont stockées sous forme de pages.
+
 Les tuples de la table sont stockées sur plusieurs pages.
-Pour faciliter l'accés aux pages lors d'une requete on utilise des méthodes d'accés. 
-On utilise soit un scan sequentiel ou un scan par index. 
-Dans le cas de sqlite on utilise l'algortithme B-tree pour stocker les pages et les indexs.
+
+Pour faciliter l'accès aux pages lors d'une requête on utilise des méthodes d'accès.
+
+On utilise soit un scan séquentiel ou un scan par index.
+
+Dans le cas de sqlite on utilise l'algorithme B-tree pour stocker les pages et les index.
  ```
 
 
@@ -98,17 +102,7 @@ SELECT * FROM dbstat;
 
 ![img_1.png](img_1.png)
 
-Le path represente le chemin ou plus precisement le noeud de l'arbre en partant du noeud root.
-Dans notre exemple le noeud root à la chemin "/" et de type internal. Le reste des pages se presente sous la forme /ddd/
-
-L'algorithme B-tree fournit un stockage de clés/valeur avec des clés uniques et ordonnées des pages. 
-
-- "Table b-trees" utilise une clé entière signée 64 bits et stocke toutes les données dans les feuilles.
-
-- Une page b-tree est soit une page internal, ou une leaf(feuille). Une page leaf contient des clés et les données associées.
-  Une page intérieure contient des clés K ainsi que des pointeurs K + 1 vers des pages enfants b-tree. 
-  Un "pointeur" dans une page b-tree internal est juste le numéro de page entier non signé de la page enfant.
-  
+c
 
 ````sql
 CREATE INDEX i1 ON magasins('ville');
