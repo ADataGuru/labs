@@ -1,3 +1,4 @@
+
 # Environnement d'écution principal à python
 if __name__ == '__main__':
 
@@ -60,3 +61,5 @@ if __name__ == '__main__':
     user1 = Utilisateur("Loïc", "Caminale")
     nom_entier = user1.get_nom_complet()
     print(nom_entier)
+
+    user2 = Utilisateur("titi", "toto")
